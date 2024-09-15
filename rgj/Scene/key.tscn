@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4q83tynjac7p"]
+
+[ext_resource type="Script" path="res://Script/key.gd" id="1_nfrbp"]
+[ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="1_qf1bj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4rxy"]
+height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1h4o"]
+atlas = ExtResource("1_qf1bj")
+region = Rect2(53, 101, 41, 20)
+
+[node name="Key" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_nfrbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_c4rxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_w1h4o")

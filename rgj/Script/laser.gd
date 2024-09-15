@@ -44,6 +44,8 @@ func _process(_delta):
 		raycast.target_position = max_cast_to
 		if raycast.is_colliding():
 			line.add_point(raycastcollision)
+			if raycast.get_collider() is TileMapLayer:
+				return
 			if raycast.get_collider().collision_layer != 32:
 				return
 			max_cast_to = max_cast_to.bounce(raycast.get_collision_normal())

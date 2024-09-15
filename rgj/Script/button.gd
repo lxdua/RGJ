@@ -9,7 +9,6 @@ var is_on: bool = false:
 		for i in control:
 			i.update(is_on)
 
-
 @export var control: Array[Node2D]
 
 var bodies: Array[Node2D]

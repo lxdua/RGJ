@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3t510wmyvm6a"]
+
+[ext_resource type="Script" path="res://Script/glass.gd" id="1_83ur1"]
+[ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="1_jrv5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuylo"]
+size = Vector2(48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddmu2"]
+atlas = ExtResource("1_jrv5h")
+region = Rect2(192, 0, 48, 45)
+
+[node name="Glass" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 257
+script = ExtResource("1_83ur1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uuylo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.780392, 1, 1)
+texture = SubResource("AtlasTexture_ddmu2")

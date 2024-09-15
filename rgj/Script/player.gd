@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 const ACCELERATION = 3000.0
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 170.0
+const JUMP_VELOCITY = -360.0
 
 var score := 0
 
@@ -23,5 +23,5 @@ func push_box():
 		var obj: Object = collision.get_collider()
 		if not obj is CollisionObject2D:
 			return
-		if obj.collision_layer == 8 or obj.collision_layer == 16:
-			obj.velocity = -collision.get_normal() * SPEED/3.0
+		if obj.collision_layer == 8 or obj.collision_layer == 16 or obj.collision_layer == 256:
+			obj.velocity = -collision.get_normal() * SPEED/2.0
