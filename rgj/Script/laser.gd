@@ -46,7 +46,6 @@ func _process(_delta):
 			line.add_point(raycastcollision)
 			if raycast.get_collider().collision_layer != 32:
 				return
-
 			max_cast_to = max_cast_to.bounce(raycast.get_collision_normal())
 			if idx < lasers.size()-1:
 				lasers[idx+1].enabled = true

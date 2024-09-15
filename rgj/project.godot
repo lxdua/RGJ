@@ -15,6 +15,14 @@ run/main_scene="res://Scene/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=384
+window/size/viewport_height=216
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Box=""
@@ -73,3 +81,7 @@ P2_attack={
 2d_physics/layer_6="Mirror"
 2d_physics/layer_7="LightSensor"
 2d_physics/layer_8="Ray"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

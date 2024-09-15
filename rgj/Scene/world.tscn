@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bewjysvsyccgy"]
+[gd_scene load_steps=13 format=4 uid="uid://bewjysvsyccgy"]
 
 [ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_otlw8"]
 [ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="2_ph8xd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="8_5ytnq"]
 [ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="9_751kp"]
 [ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="9_u8lsf"]
+[ext_resource type="PackedScene" uid="uid://daxj4g21na3lt" path="res://Scene/coin.tscn" id="10_odhia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng63b"]
 texture = ExtResource("2_ph8xd")
@@ -152,35 +153,38 @@ tile_map_data = PackedByteArray("AAAIABoAAAAAAAAAAAAIABsAAAAAAAEAAAAIABwAAAAAAAI
 tile_set = SubResource("TileSet_p1fmg")
 
 [node name="Player1" parent="." instance=ExtResource("2_otlw8")]
-position = Vector2(357, 302)
+position = Vector2(241, 90)
 
 [node name="Player2" parent="." instance=ExtResource("3_nvocj")]
-position = Vector2(520, 310)
+position = Vector2(404, 98)
 
 [node name="Box" parent="." instance=ExtResource("4_ojig4")]
-position = Vector2(591, 345)
+position = Vector2(475, 133)
 
 [node name="Mirror" parent="." instance=ExtResource("6_cbg3r")]
-position = Vector2(433, 250)
+position = Vector2(317, 38)
 rotation = 1.5708
 
 [node name="Mirror2" parent="." instance=ExtResource("6_cbg3r")]
-position = Vector2(433, 205)
+position = Vector2(317, -7)
 rotation = 1.5708
 
 [node name="LightSensor" parent="." node_paths=PackedStringArray("control") instance=ExtResource("7_2l8qa")]
-position = Vector2(305, 404)
+position = Vector2(189, 192)
 control = [NodePath("../XuHua")]
 
 [node name="XuHua" parent="." instance=ExtResource("8_5ytnq")]
-position = Vector2(216, 339)
+position = Vector2(100, 127)
 
 [node name="XuHua2" parent="." instance=ExtResource("8_5ytnq")]
-position = Vector2(155, 355)
+position = Vector2(39, 143)
 
 [node name="Button" parent="." node_paths=PackedStringArray("control") instance=ExtResource("9_u8lsf")]
-position = Vector2(166, 416)
+position = Vector2(50, 204)
 control = [NodePath("../XuHua2")]
 
 [node name="Laser" parent="." instance=ExtResource("9_751kp")]
-position = Vector2(165, 399)
+position = Vector2(49, 187)
+
+[node name="Coin" parent="." instance=ExtResource("10_odhia")]
+position = Vector2(143, 97)
