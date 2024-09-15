@@ -8,7 +8,7 @@ size = Vector2(48, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xdu8"]
 atlas = ExtResource("2_fud02")
-region = Rect2(0, 0, 48, 45)
+region = Rect2(96, 90, 48, 45)
 
 [node name="Box" type="CharacterBody2D" groups=["Box"]]
 collision_layer = 8

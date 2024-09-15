@@ -12,7 +12,7 @@ region = Rect2(192, 0, 48, 45)
 
 [node name="Glass" type="CharacterBody2D"]
 collision_layer = 256
-collision_mask = 257
+collision_mask = 281
 script = ExtResource("1_83ur1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

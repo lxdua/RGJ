@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://bewjysvsyccgy"]
+[gd_scene load_steps=13 format=4 uid="uid://bewjysvsyccgy"]
 
+[ext_resource type="Texture2D" uid="uid://cdqotd2kp5f1r" path="res://Art/BG/bg3.png" id="1_mao1d"]
 [ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="1_olv7s"]
 [ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_k7dcp"]
 [ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="3_80rni"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3t510wmyvm6a" path="res://Scene/glass.tscn" id="6_1pqwp"]
 [ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="7_pmb2l"]
 [ext_resource type="PackedScene" uid="uid://upcm1wxlmh76" path="res://Scene/mirror.tscn" id="8_0da5s"]
+[ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="10_ucnjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvdbb"]
 texture = ExtResource("1_olv7s")
@@ -40,6 +42,15 @@ sources/0 = SubResource("TileSetAtlasSource_rvdbb")
 
 [node name="World" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Bg3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mao1d")
+centered = false
+
 [node name="Player1" parent="." instance=ExtResource("2_k7dcp")]
 position = Vector2(113, 199)
 
@@ -51,6 +62,9 @@ position = Vector2(185, 155)
 
 [node name="Box" parent="." instance=ExtResource("5_150op")]
 position = Vector2(384, 170)
+
+[node name="Button" parent="." instance=ExtResource("10_ucnjv")]
+position = Vector2(313, 225)
 
 [node name="Glass" parent="." instance=ExtResource("6_1pqwp")]
 position = Vector2(233, 180)

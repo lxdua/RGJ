@@ -6,6 +6,10 @@ var is_on: bool = false:
 		if is_on == v:
 			return
 		is_on = v
+		if is_on:
+			$Sprite2D.offset.y = -7
+		else:
+			$Sprite2D.offset.y = -15
 		for i in control:
 			i.update(is_on)
 
