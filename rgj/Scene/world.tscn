@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bewjysvsyccgy"]
+[gd_scene load_steps=12 format=4 uid="uid://bewjysvsyccgy"]
 
 [ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_otlw8"]
 [ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="2_ph8xd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://upcm1wxlmh76" path="res://Scene/mirror.tscn" id="6_cbg3r"]
 [ext_resource type="PackedScene" uid="uid://c24ad5sbumxmr" path="res://Scene/light_sensor.tscn" id="7_2l8qa"]
 [ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="8_5ytnq"]
+[ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="9_u8lsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng63b"]
 texture = ExtResource("2_ph8xd")
@@ -175,4 +176,11 @@ position = Vector2(305, 404)
 control = [NodePath("../XuHua")]
 
 [node name="XuHua" parent="." instance=ExtResource("8_5ytnq")]
-position = Vector2(210, 383)
+position = Vector2(216, 339)
+
+[node name="XuHua2" parent="." instance=ExtResource("8_5ytnq")]
+position = Vector2(155, 355)
+
+[node name="Button" parent="." node_paths=PackedStringArray("control") instance=ExtResource("9_u8lsf")]
+position = Vector2(166, 416)
+control = [NodePath("../XuHua2")]
