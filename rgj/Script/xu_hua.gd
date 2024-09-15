@@ -6,8 +6,8 @@ extends StaticBody2D
 
 func update(is_on: bool):
 	if is_on:
-		collision_shape_2d.disabled = true
+		collision_shape_2d.set_deferred("disabled", true)
 	else:
-		collision_shape_2d.disabled = false
+		collision_shape_2d.set_deferred("disabled", false)
 	if fanzhuan:
-		collision_shape_2d.disabled = not collision_shape_2d.disabled
+		collision_shape_2d.set_deferred("disabled", not collision_shape_2d.disabled)

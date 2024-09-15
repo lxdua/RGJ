@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bewjysvsyccgy"]
+[gd_scene load_steps=11 format=4 uid="uid://bewjysvsyccgy"]
 
 [ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_otlw8"]
 [ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="2_ph8xd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtypoor6m4bme" path="res://Scene/ray.tscn" id="5_2rpmf"]
 [ext_resource type="PackedScene" uid="uid://upcm1wxlmh76" path="res://Scene/mirror.tscn" id="6_cbg3r"]
 [ext_resource type="PackedScene" uid="uid://c24ad5sbumxmr" path="res://Scene/light_sensor.tscn" id="7_2l8qa"]
+[ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="8_5ytnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng63b"]
 texture = ExtResource("2_ph8xd")
@@ -169,5 +170,9 @@ rotation = 1.5708
 [node name="Ray" parent="." instance=ExtResource("5_2rpmf")]
 position = Vector2(254, 405)
 
-[node name="LightSensor" parent="." instance=ExtResource("7_2l8qa")]
+[node name="LightSensor" parent="." node_paths=PackedStringArray("control") instance=ExtResource("7_2l8qa")]
 position = Vector2(305, 404)
+control = [NodePath("../XuHua")]
+
+[node name="XuHua" parent="." instance=ExtResource("8_5ytnq")]
+position = Vector2(210, 383)
