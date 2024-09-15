@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="2_ph8xd"]
 [ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="3_nvocj"]
 [ext_resource type="PackedScene" uid="uid://dp7yhdb6ojq8d" path="res://Scene/box.tscn" id="4_ojig4"]
-[ext_resource type="PackedScene" uid="uid://dtypoor6m4bme" path="res://Scene/ray.tscn" id="5_2rpmf"]
 [ext_resource type="PackedScene" uid="uid://upcm1wxlmh76" path="res://Scene/mirror.tscn" id="6_cbg3r"]
 [ext_resource type="PackedScene" uid="uid://c24ad5sbumxmr" path="res://Scene/light_sensor.tscn" id="7_2l8qa"]
 [ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="8_5ytnq"]
+[ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="9_751kp"]
 [ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="9_u8lsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng63b"]
@@ -168,9 +168,6 @@ rotation = 1.5708
 position = Vector2(433, 205)
 rotation = 1.5708
 
-[node name="Ray" parent="." instance=ExtResource("5_2rpmf")]
-position = Vector2(254, 405)
-
 [node name="LightSensor" parent="." node_paths=PackedStringArray("control") instance=ExtResource("7_2l8qa")]
 position = Vector2(305, 404)
 control = [NodePath("../XuHua")]
@@ -184,3 +181,6 @@ position = Vector2(155, 355)
 [node name="Button" parent="." node_paths=PackedStringArray("control") instance=ExtResource("9_u8lsf")]
 position = Vector2(166, 416)
 control = [NodePath("../XuHua2")]
+
+[node name="Laser" parent="." instance=ExtResource("9_751kp")]
+position = Vector2(165, 399)
