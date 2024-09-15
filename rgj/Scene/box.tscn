@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp7yhdb6ojq8d"]
+
+[ext_resource type="Script" path="res://Script/box.gd" id="1_0kuee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub2oh"]
+
+[node name="Box" type="CharacterBody2D" groups=["Box"]]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_0kuee")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ub2oh")

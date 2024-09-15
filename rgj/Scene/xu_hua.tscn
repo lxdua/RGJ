@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsu0k3wuonra"]
+
+[ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="1_bp0it"]
+[ext_resource type="Script" path="res://Script/xu_hua.gd" id="1_wt8bd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r26i4"]
+
+[node name="XuHua" type="StaticBody2D"]
+script = ExtResource("1_wt8bd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_bp0it")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r26i4")

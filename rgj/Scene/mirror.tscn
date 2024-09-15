@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://upcm1wxlmh76"]
+
+[ext_resource type="Script" path="res://Script/mirror.gd" id="1_8u0a2"]
+[ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="1_kgx41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoky4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yhmr"]
+size = Vector2(28.2843, 4)
+
+[node name="Mirror" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 25
+script = ExtResource("1_8u0a2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_kgx41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uoky4")
+
+[node name="MirrorArea" type="CharacterBody2D" parent="."]
+rotation = 0.785398
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorArea"]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8yhmr")
+debug_color = Color(0.924188, 4.76494e-05, 0.680971, 0.42)
