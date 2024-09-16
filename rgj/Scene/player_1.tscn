@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 2.0
+"speed": 4.0
 }]
 
 [node name="Player1" instance=ExtResource("1_mvh64")]
@@ -45,4 +45,5 @@ script = ExtResource("2_mjnrp")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_m3nw8")
 animation = &"walk"
+frame_progress = 0.289428
 offset = Vector2(5, 0)
