@@ -6,17 +6,19 @@ extends StaticBody2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready() -> void:
-	update(fanzhuan)
+	update(false)
 
 func update(is_on: bool):
-	if is_on:
+	var true_is_on = is_on
+	if fanzhuan:
+		true_is_on = not true_is_on
+
+	if true_is_on:
 		collision_shape_2d.set_deferred("disabled", true)
 	else:
 		collision_shape_2d.set_deferred("disabled", false)
-	if fanzhuan:
-		collision_shape_2d.set_deferred("disabled", not collision_shape_2d.disabled)
 
-	if collision_shape_2d.disabled:
+	if true_is_on:
 		sprite.play("on")
 	else:
 		sprite.play("off")

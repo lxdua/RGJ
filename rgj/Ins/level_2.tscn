@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=4 uid="uid://bnouy711aal4l"]
+
+[ext_resource type="PackedScene" uid="uid://bewjysvsyccgy" path="res://Scene/world.tscn" id="1_usa7f"]
+
+[node name="Level2" instance=ExtResource("1_usa7f")]
+
+[node name="Ground" parent="." index="0"]
+tile_map_data = PackedByteArray("AAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAA=")
