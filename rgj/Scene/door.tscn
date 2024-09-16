@@ -10,7 +10,7 @@ region = Rect2(269, 21, 96, 86)
 [sub_resource type="CircleShape2D" id="CircleShape2D_womgx"]
 radius = 28.1603
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="Area2D" groups=["Door"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_ei5x1")
@@ -25,3 +25,4 @@ position = Vector2(0, -34)
 shape = SubResource("CircleShape2D_womgx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
