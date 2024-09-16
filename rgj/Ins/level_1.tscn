@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=4 uid="uid://d016m1uhjhuku"]
+
+[ext_resource type="PackedScene" uid="uid://bewjysvsyccgy" path="res://Scene/world.tscn" id="1_6cy6j"]
+[ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_4cmm6"]
+[ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="2_fpd63"]
+[ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="3_m6txo"]
+[ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="4_n4o54"]
+[ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="6_nggsu"]
+
+[node name="Level1" instance=ExtResource("1_6cy6j")]
+
+[node name="Button" parent="." index="0" node_paths=PackedStringArray("control") instance=ExtResource("2_fpd63")]
+position = Vector2(264, 90)
+control = [NodePath("../XuHua")]
+
+[node name="Ground" parent="." index="1"]
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAIAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAA=")
+
+[node name="Player1" parent="." index="2" instance=ExtResource("2_4cmm6")]
+position = Vector2(129, 204)
+
+[node name="Player2" parent="." index="3" instance=ExtResource("3_m6txo")]
+position = Vector2(312, 71)
+
+[node name="Laser" parent="." index="4" instance=ExtResource("4_n4o54")]
+position = Vector2(92, 46)
+aim = Vector2(0, 1)
+
+[node name="XuHua" parent="." index="5" instance=ExtResource("6_nggsu")]
+position = Vector2(171, 72)
+fanzhuan = true

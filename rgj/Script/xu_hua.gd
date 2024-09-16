@@ -5,6 +5,9 @@ extends StaticBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 
+func _ready() -> void:
+	update(fanzhuan)
+
 func update(is_on: bool):
 	if is_on:
 		collision_shape_2d.set_deferred("disabled", true)

@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c24ad5sbumxmr"]
+[gd_scene load_steps=5 format=3 uid="uid://c24ad5sbumxmr"]
 
-[ext_resource type="Texture2D" uid="uid://vj0mqpgd36br" path="res://icon.svg" id="1_1vohl"]
 [ext_resource type="Script" path="res://Script/light_sensor.gd" id="1_nc50v"]
+[ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="2_8m2gf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm6mo"]
+atlas = ExtResource("2_8m2gf")
+region = Rect2(192, 90, 48, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r231"]
+size = Vector2(39, 19)
 
 [node name="LightSensor" type="Area2D"]
 collision_layer = 64
@@ -11,10 +16,10 @@ collision_mask = 128
 script = ExtResource("1_nc50v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_1vohl")
+texture = SubResource("AtlasTexture_jm6mo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_3r231")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
