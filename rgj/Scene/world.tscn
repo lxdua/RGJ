@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bewjysvsyccgy"]
+[gd_scene load_steps=14 format=4 uid="uid://bewjysvsyccgy"]
 
 [ext_resource type="Texture2D" uid="uid://cdqotd2kp5f1r" path="res://Art/BG/bg3.png" id="1_mao1d"]
 [ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="1_olv7s"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="7_pmb2l"]
 [ext_resource type="PackedScene" uid="uid://upcm1wxlmh76" path="res://Scene/mirror.tscn" id="8_0da5s"]
 [ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="10_ucnjv"]
+[ext_resource type="PackedScene" uid="uid://c3h5rpswe0lfp" path="res://Scene/ex_brick.tscn" id="11_qoxkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvdbb"]
 texture = ExtResource("1_olv7s")
@@ -79,3 +80,6 @@ position = Vector2(60, 211)
 [node name="Mirror" parent="." instance=ExtResource("8_0da5s")]
 position = Vector2(174, 196)
 rotation = 1.5708
+
+[node name="EXBrick" parent="." instance=ExtResource("11_qoxkx")]
+position = Vector2(456, 196)

@@ -16,3 +16,7 @@ func move(delta: float):
 	else:
 		velocity.x = move_toward(velocity.x, 0, ACCELERATION * delta)
 		sprite.play("idle")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("P1_attack"):
+		click()
