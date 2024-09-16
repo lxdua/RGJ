@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3h5rpswe0lfp"]
+[gd_scene load_steps=5 format=3 uid="uid://c3h5rpswe0lfp"]
 
 [ext_resource type="Script" path="res://Script/ex_brick.gd" id="1_hd4mj"]
 [ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="2_j4ssi"]
-[ext_resource type="FontFile" uid="uid://d07bs446gceki" path="res://Art/VonwaonBitmap-16px.ttf" id="3_8wj01"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmxnl"]
 atlas = ExtResource("2_j4ssi")
@@ -20,21 +19,3 @@ texture = SubResource("AtlasTexture_wmxnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1y2bh")
-
-[node name="TimeLabel" type="Label" parent="."]
-offset_left = -24.0
-offset_top = -22.0
-offset_right = 24.0
-offset_bottom = 22.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8wj01")
-theme_override_font_sizes/font_size = 16
-text = "20"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
