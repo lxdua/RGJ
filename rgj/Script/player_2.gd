@@ -20,3 +20,8 @@ func move(delta: float):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("P2_attack"):
 		click()
+
+func click():
+	if ex_box_arr.is_empty():
+		return
+	ex_box_arr[0].is_on = false

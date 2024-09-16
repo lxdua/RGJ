@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkr6qejtyqfsg"]
+
+[ext_resource type="Script" path="res://Script/last_scene_2.gd" id="1_2641t"]
+[ext_resource type="PackedScene" uid="uid://cwewoa1a02mem" path="res://Ins/last_scene.tscn" id="2_4wxeu"]
+[ext_resource type="Texture2D" uid="uid://c3n5ye3tqx8c2" path="res://Art/BG/storybg.png" id="3_fanu0"]
+
+[node name="LastScene2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2641t")
+new_scene = ExtResource("2_4wxeu")
+
+[node name="Storybg" type="Sprite2D" parent="."]
+scale = Vector2(0.424643, 0.434375)
+texture = ExtResource("3_fanu0")
+centered = false
+
+[node name="StoryContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

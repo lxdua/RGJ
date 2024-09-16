@@ -26,11 +26,6 @@ func push_box():
 		if obj.collision_layer == 8 or obj.collision_layer == 16 or obj.collision_layer == 256:
 			obj.velocity = -collision.get_normal() * SPEED/2.0
 
-func click():
-	if ex_box_arr.is_empty():
-		return
-	ex_box_arr[0].is_on = true
-
 var ex_box_arr: Array[Node2D]
 
 func _on_player_area_body_entered(body: Node2D) -> void:

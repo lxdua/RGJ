@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwewoa1a02mem"]
+
+[ext_resource type="Texture2D" uid="uid://d1ip7i6ngr0kg" path="res://Art/Head/111.png" id="1_rysxx"]
+[ext_resource type="Texture2D" uid="uid://ci50nfjkf127c" path="res://Art/Head/222.png" id="2_iub7s"]
+[ext_resource type="Texture2D" uid="uid://caf873d8sp1xv" path="res://Art/Head/333.png" id="3_gjmkb"]
+[ext_resource type="FontFile" uid="uid://d07bs446gceki" path="res://Art/VonwaonBitmap-16px.ttf" id="4_odtqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh436"]
+atlas = ExtResource("1_rysxx")
+region = Rect2(88, 48, 200, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0yxy"]
+atlas = ExtResource("2_iub7s")
+region = Rect2(96, 64, 192, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52sli"]
+atlas = ExtResource("3_gjmkb")
+region = Rect2(96, 64, 192, 168)
+
+[node name="LastScene" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 264.0
+offset_bottom = 272.0
+texture = SubResource("AtlasTexture_mh436")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 304.0
+offset_top = 72.0
+offset_right = 496.0
+offset_bottom = 256.0
+texture = SubResource("AtlasTexture_s0yxy")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 536.0
+offset_top = 72.0
+offset_right = 728.0
+offset_bottom = 240.0
+texture = SubResource("AtlasTexture_52sli")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 316.0
+offset_right = 515.0
+offset_bottom = 363.0
+theme_override_fonts/font = ExtResource("4_odtqy")
+theme_override_font_sizes/font_size = 46
+text = "感谢游玩！"

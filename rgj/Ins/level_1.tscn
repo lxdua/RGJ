@@ -1,53 +1,110 @@
-[gd_scene load_steps=12 format=4 uid="uid://d016m1uhjhuku"]
+[gd_scene load_steps=14 format=4 uid="uid://b3bjyhgow6fc6"]
 
-[ext_resource type="PackedScene" uid="uid://bewjysvsyccgy" path="res://Scene/world.tscn" id="1_6cy6j"]
-[ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="2_4cmm6"]
-[ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="2_fpd63"]
-[ext_resource type="PackedScene" uid="uid://bnouy711aal4l" path="res://Ins/level_2.tscn" id="3_dhc16"]
-[ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="3_m6txo"]
-[ext_resource type="PackedScene" uid="uid://dvgwx6qy20w28" path="res://Scene/laser.tscn" id="4_n4o54"]
-[ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="6_nggsu"]
-[ext_resource type="PackedScene" uid="uid://5dask8utaqqo" path="res://Scene/door.tscn" id="7_x7lgm"]
-[ext_resource type="PackedScene" uid="uid://c4q83tynjac7p" path="res://Scene/key.tscn" id="8_yj614"]
-[ext_resource type="PackedScene" uid="uid://c3h5rpswe0lfp" path="res://Scene/ex_brick.tscn" id="10_fsero"]
-[ext_resource type="PackedScene" uid="uid://c24ad5sbumxmr" path="res://Scene/light_sensor.tscn" id="11_y7e23"]
+[ext_resource type="Texture2D" uid="uid://c6oeer8mhwig3" path="res://Art/BG/BBG.png" id="1_v8hlf"]
+[ext_resource type="PackedScene" uid="uid://c3h5rpswe0lfp" path="res://Scene/ex_brick.tscn" id="1_x4eqw"]
+[ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="2_1jmxv"]
+[ext_resource type="PackedScene" uid="uid://c4q83tynjac7p" path="res://Scene/key.tscn" id="3_4byje"]
+[ext_resource type="PackedScene" uid="uid://bw3qblbs1bq8o" path="res://Ins/level_2.tscn" id="3_dhc16"]
+[ext_resource type="PackedScene" uid="uid://5dask8utaqqo" path="res://Scene/door.tscn" id="4_6vgn2"]
+[ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="5_ys52l"]
+[ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="6_wc1oa"]
+[ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="7_mddas"]
+[ext_resource type="PackedScene" uid="uid://daxj4g21na3lt" path="res://Scene/coin.tscn" id="8_lnkpc"]
+[ext_resource type="PackedScene" uid="uid://b1h0605sp1aax" path="res://Scene/dead_area.tscn" id="10_pggng"]
 
-[node name="Level1" instance=ExtResource("1_6cy6j")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irisu"]
+texture = ExtResource("2_1jmxv")
+texture_region_size = Vector2i(48, 45)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+2:1/0/physics_layer_0/polygon_0/one_way = true
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+4:0/0 = 0
 
-[node name="Door" parent="." index="0" instance=ExtResource("7_x7lgm")]
-position = Vector2(88, 225)
+[sub_resource type="TileSet" id="TileSet_mqji3"]
+tile_size = Vector2i(48, 45)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_irisu")
+
+[node name="level1" type="Node2D"]
+
+[node name="Bbg" type="Sprite2D" parent="."]
+position = Vector2(782, 237)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_v8hlf")
+
+[node name="EXBrick" parent="." node_paths=PackedStringArray("control") instance=ExtResource("1_x4eqw")]
+position = Vector2(552, 248)
+control = [NodePath("../XuHua"), NodePath("../XuHua2"), NodePath("../XuHua3"), NodePath("../XuHua5"), NodePath("../XuHua6"), NodePath("../XuHua7")]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAUAAAABAAAAAAARAAYAAAAAAAAAAAASAAUAAAAEAAEAAAATAAUAAAACAAEAAAAUAAUAAAADAAEAAAAPAAUAAAABAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAUAAAABAAAAAAAXAAUAAAABAAAAAAAXAAYAAAAAAAAAAAAVAAUAAAABAAAAAAAVAAYAAAAAAAAAAAAWAAUAAAABAAAAAAAWAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_mqji3")
+
+[node name="Key" parent="Ground" instance=ExtResource("3_4byje")]
+position = Vector2(792, 160)
+rotation = 1.57079
+
+[node name="Door" parent="Ground" instance=ExtResource("4_6vgn2")]
+position = Vector2(1104, 224)
 next_level = ExtResource("3_dhc16")
 
-[node name="Button" parent="." index="1" instance=ExtResource("2_fpd63")]
-position = Vector2(264, 90)
+[node name="Player2" parent="." instance=ExtResource("5_ys52l")]
+position = Vector2(496, 224)
 
-[node name="Ground" parent="." index="2"]
-tile_map_data = PackedByteArray("AAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAIAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAA=")
+[node name="Player1" parent="." instance=ExtResource("6_wc1oa")]
+position = Vector2(448, 224)
 
-[node name="Player1" parent="." index="3" instance=ExtResource("2_4cmm6")]
-position = Vector2(204, 211)
-
-[node name="Player2" parent="." index="4" instance=ExtResource("3_m6txo")]
-position = Vector2(312, 71)
-
-[node name="Laser" parent="." index="5" instance=ExtResource("4_n4o54")]
-position = Vector2(148, 130)
-
-[node name="XuHua" parent="." index="6" instance=ExtResource("6_nggsu")]
-position = Vector2(424, 67)
+[node name="XuHua5" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(840, 158)
 fanzhuan = true
 
-[node name="Key" parent="." index="7" instance=ExtResource("8_yj614")]
-position = Vector2(240, 46)
+[node name="XuHua6" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(840, 203)
+fanzhuan = true
 
-[node name="EXBrick" parent="." index="8" node_paths=PackedStringArray("control") instance=ExtResource("10_fsero")]
-position = Vector2(360, 112)
-control = [NodePath("../XuHua")]
+[node name="XuHua7" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(840, 113)
+fanzhuan = true
 
-[node name="XuHua2" parent="." index="9" instance=ExtResource("6_nggsu")]
-position = Vector2(171, 55)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(784, 216)
+rotation = 3.14159
+scale = Vector2(10591.1, 0.125631)
 
-[node name="LightSensor" parent="." index="10" node_paths=PackedStringArray("control") instance=ExtResource("11_y7e23")]
-position = Vector2(219, 137)
-rotation = -1.5708
-control = [NodePath("../XuHua2")]
+[node name="XuHua" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(648, 247)
+fanzhuan = true
+
+[node name="XuHua3" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(696, 247)
+fanzhuan = true
+
+[node name="EXBrick2" parent="." node_paths=PackedStringArray("control") instance=ExtResource("1_x4eqw")]
+position = Vector2(792, 248)
+control = [NodePath("../XuHua"), NodePath("../XuHua2"), NodePath("../XuHua3"), NodePath("../XuHua5"), NodePath("../XuHua6"), NodePath("../XuHua7")]
+
+[node name="XuHua2" parent="." instance=ExtResource("7_mddas")]
+position = Vector2(600, 247)
+fanzhuan = true
+
+[node name="Coin" parent="." instance=ExtResource("8_lnkpc")]
+position = Vector2(936, 190)
+
+[node name="DeadArea" parent="." instance=ExtResource("10_pggng")]
+position = Vector2(-231, 528)

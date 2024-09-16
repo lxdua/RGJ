@@ -12,6 +12,7 @@ script = ExtResource("1_bmpmp")
 [node name="Laser" type="RayCast2D" parent="."]
 target_position = Vector2(0, 0)
 collision_mask = 107
+collide_with_areas = true
 
 [node name="Line" type="Line2D" parent="."]
 width = 5.0

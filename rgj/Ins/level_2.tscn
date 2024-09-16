@@ -1,8 +1,176 @@
-[gd_scene load_steps=2 format=4 uid="uid://bnouy711aal4l"]
+[gd_scene load_steps=20 format=4 uid="uid://bw3qblbs1bq8o"]
 
-[ext_resource type="PackedScene" uid="uid://bewjysvsyccgy" path="res://Scene/world.tscn" id="1_usa7f"]
+[ext_resource type="PackedScene" uid="uid://c4q83tynjac7p" path="res://Scene/key.tscn" id="1_ckbkf"]
+[ext_resource type="Texture2D" uid="uid://c6oeer8mhwig3" path="res://Art/BG/BBG.png" id="1_y0ldd"]
+[ext_resource type="PackedScene" uid="uid://5dask8utaqqo" path="res://Scene/door.tscn" id="2_v8ikx"]
+[ext_resource type="PackedScene" uid="uid://bxv38g2568o8w" path="res://Scene/button.tscn" id="2_yabcl"]
+[ext_resource type="Texture2D" uid="uid://dhchptfwjj6gn" path="res://Art/all.png" id="3_kl1ek"]
+[ext_resource type="PackedScene" uid="uid://cflyk07vnr3ep" path="res://Scene/player_1.tscn" id="4_7k4gw"]
+[ext_resource type="PackedScene" uid="uid://cq0c26jug145n" path="res://Scene/player_2.tscn" id="4_b6g85"]
+[ext_resource type="PackedScene" uid="uid://daxj4g21na3lt" path="res://Scene/coin.tscn" id="6_84hix"]
+[ext_resource type="PackedScene" uid="uid://rfbxktsvdxmb" path="res://Ins/level_3.tscn" id="6_wlrwm"]
+[ext_resource type="PackedScene" uid="uid://c3h5rpswe0lfp" path="res://Scene/ex_brick.tscn" id="7_yeil3"]
+[ext_resource type="PackedScene" uid="uid://dsu0k3wuonra" path="res://Scene/xu_hua.tscn" id="10_jhv17"]
+[ext_resource type="PackedScene" path="res://Scene/platform.tscn" id="11_3tw24"]
+[ext_resource type="PackedScene" uid="uid://dp7yhdb6ojq8d" path="res://Scene/box.tscn" id="11_lb7js"]
+[ext_resource type="PackedScene" uid="uid://b1h0605sp1aax" path="res://Scene/dead_area.tscn" id="13_ruw4e"]
 
-[node name="Level2" instance=ExtResource("1_usa7f")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7g50a"]
+texture = ExtResource("3_kl1ek")
+texture_region_size = Vector2i(48, 45)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -22.5, 24, -22.5, 24, 22.5, -24, 22.5)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+2:1/0/physics_layer_0/polygon_0/one_way = true
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -0.0883904, 24, 0.0883904, 24, 2.20971, -24, 2.38649)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+4:0/0 = 0
 
-[node name="Ground" parent="." index="0"]
-tile_map_data = PackedByteArray("AAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAA=")
+[sub_resource type="TileSet" id="TileSet_cpixd"]
+tile_size = Vector2i(48, 45)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7g50a")
+
+[sub_resource type="Animation" id="Animation_8frxc"]
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 146), Vector2(600, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_klw57"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(592, 146), Vector2(600, -72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lbr7"]
+_data = {
+"RESET": SubResource("Animation_8frxc"),
+"new_animation": SubResource("Animation_klw57")
+}
+
+[node name="level2" type="Node2D"]
+
+[node name="Bbg" type="Sprite2D" parent="."]
+position = Vector2(399, 27)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_y0ldd")
+
+[node name="Box" parent="." instance=ExtResource("11_lb7js")]
+position = Vector2(120, 56)
+
+[node name="Button" parent="." node_paths=PackedStringArray("control") instance=ExtResource("2_yabcl")]
+position = Vector2(264, 192)
+control = [NodePath("XuHua6"), NodePath("XuHua5"), NodePath("XuHua4")]
+
+[node name="XuHua6" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(176, -248)
+fanzhuan = true
+
+[node name="XuHua5" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(224, -248)
+fanzhuan = true
+
+[node name="XuHua" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(-32, -248)
+
+[node name="XuHua3" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(-80, -248)
+
+[node name="XuHua2" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(16, -248)
+
+[node name="XuHua4" parent="Button" instance=ExtResource("10_jhv17")]
+position = Vector2(128, -248)
+fanzhuan = true
+
+[node name="Key" parent="." instance=ExtResource("1_ckbkf")]
+position = Vector2(232, 56)
+rotation = 1.57079
+
+[node name="Door" parent="." instance=ExtResource("2_v8ikx")]
+position = Vector2(56, -78)
+next_level = ExtResource("6_wlrwm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 12)
+scale = Vector2(21.5596, 10.34)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+position = Vector2(0, 12)
+tile_map_data = PackedByteArray("AAAAAAQAAAABAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_cpixd")
+
+[node name="Coin3" parent="Ground" instance=ExtResource("6_84hix")]
+position = Vector2(456, 100)
+
+[node name="Coin2" parent="Ground" instance=ExtResource("6_84hix")]
+position = Vector2(336, -140)
+
+[node name="Coin" parent="Ground" instance=ExtResource("6_84hix")]
+position = Vector2(408, 100)
+
+[node name="Player1" parent="." instance=ExtResource("4_7k4gw")]
+position = Vector2(32, 190)
+
+[node name="Player2" parent="." instance=ExtResource("4_b6g85")]
+position = Vector2(96, 190)
+
+[node name="EXBrick" parent="." node_paths=PackedStringArray("control") instance=ExtResource("7_yeil3")]
+position = Vector2(168, 215)
+control = [NodePath("XuHua"), NodePath("XuHua2"), NodePath("XuHua3"), NodePath("../Button/XuHua3"), NodePath("../Button/XuHua2"), NodePath("../Button/XuHua")]
+
+[node name="XuHua3" parent="EXBrick" instance=ExtResource("10_jhv17")]
+position = Vector2(-48, -112)
+
+[node name="XuHua2" parent="EXBrick" instance=ExtResource("10_jhv17")]
+position = Vector2(284, -47)
+
+[node name="XuHua" parent="EXBrick" instance=ExtResource("10_jhv17")]
+position = Vector2(236, -47)
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("11_3tw24")]
+position = Vector2(592, 146)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_0lbr7")
+}
+autoplay = "RESET"
+
+[node name="DeadArea" parent="." instance=ExtResource("13_ruw4e")]
+position = Vector2(-498, 408)

@@ -26,7 +26,6 @@ func _ready():
 	$Laser.target_position = max_cast_to
 
 func _process(_delta):
-
 	$End.show()
 	rot = aim.angle()
 	line.global_position = Vector2.ZERO
@@ -46,6 +45,10 @@ func _process(_delta):
 			line.add_point(raycastcollision)
 			if raycast.get_collider() is TileMapLayer:
 				return
+			print(raycast.get_collider())
+			if raycast.get_collider().collision_layer == 64:
+				raycast.get_collider().is_on = true
+
 			if raycast.get_collider().collision_layer != 32:
 				return
 			max_cast_to = max_cast_to.bounce(raycast.get_collision_normal())
@@ -56,5 +59,5 @@ func _process(_delta):
 				$End.global_position = raycastcollision
 		else:
 			line.add_point(global_position + max_cast_to)
-			$End.hide()
+			#$End.hide()
 			break
